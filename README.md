@@ -1,28 +1,28 @@
 Feedback Bot
 
-Телеграм-бот для обратной связи. Пользователи пишут боту, сообщения пересылаются админу, админ отвечает через Reply.
+A Telegram bot for feedback. Users send messages to the bot, they get forwarded to the admin, and the admin can reply using Telegram's Reply feature.
 
-Как получить токен
+How to get a token
 
-Идёшь в Telegram к @BotFather, создаёшь нового бота командой /newbot. Он даст тебе токен — строку вида 1234567890:ABCdefGHIjklmNOPqrstUVwxyz. Сохрани её.
+Go to @BotFather in Telegram and create a new bot with /newbot. It will give you a token like 1234567890:ABCdefGHIjklmNOPqrstUVwxyz. Save it.
 
-Как узнать свой ID
+How to find your ID
 
-Напиши @userinfobot или @getmyid_bot — они пришлют твой числовой ID.
+Message @userinfobot or @getmyid_bot -- they will send you your numeric ID.
 
-Запуск
+How to run
 
-Открой bot.py и подставь токен и свой ID в переменные BOT_TOKEN и ADMIN_ID. Потом в терминале:
+Open bot.py and put your token and ID into BOT_TOKEN and ADMIN_ID. Then in your terminal:
 
 pip install -r requirements.txt
 python bot.py
 
-Как работает
+How it works
 
-Пользователь пишет боту что угодно (текст, фото, документ, аудио, голосовое). Бот пересылает это админу. Админ нажимает Ответить на пересланном и пишет ответ. Бот доставляет ответ пользователю.
+A user sends any message (text, photo, document, audio, voice) to the bot. The bot forwards it to the admin. The admin presses Reply on the forwarded message and types an answer. The bot delivers the answer back to the user.
 
-Если пользователь заблокировал бота — админ увидит сообщение об ошибке, бот не упадёт.
+If the user blocked the bot, the admin gets an error message. The bot does not crash.
 
-Что ещё
+Notes
 
-Словари в памяти, поэтому после перезапуска история ответов теряется. Если у пользователя скрыт профиль — всё равно работает, хранится своя таблица соответствий.
+It uses in-memory dictionaries, so everything resets on restart. If the user has a hidden profile, it still works because the bot keeps its own mapping.
